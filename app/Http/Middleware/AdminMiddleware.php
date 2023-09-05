@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
-use Auth;
+// use App\Http\Controllers\Auth;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
@@ -24,11 +25,13 @@ class AdminMiddleware
             }
             else
              {
-               return redirect('/home')->with('message', 'access denied') ;
+               return redirect('/home')->with('status', 'access denied') ;
              }
-             else{
-                return redirect('.login')->with('message', Please Log In first);
-             }
+            
+             
+                return redirect('.login')->with('status', 'Please Log In first'); ;
+             
+            
         }
         
     }
