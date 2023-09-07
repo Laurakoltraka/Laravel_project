@@ -23,6 +23,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('add-category' , [App\Http\Controllers\Admin\CategryController::class,'create']);
     Route::post('add-category' , [App\Http\Controllers\Admin\CategryController::class,'store']);
     Route::get('edit-category/{category_id}' , [App\Http\Controllers\Admin\CategryController::class,'edit']);
+    Route::put('update-category/{category_id}' ,[App\Http\Controllers\Admin\CategryController::class,'update']);
 
     
 });
